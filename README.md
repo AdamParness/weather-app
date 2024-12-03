@@ -1,0 +1,1 @@
+The Odin Project's 'Weather App' Project practicing using promises, async/await with API's.
