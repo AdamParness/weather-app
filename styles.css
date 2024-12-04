@@ -1,3 +1,80 @@
 body {
-    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.5s ease;
+}
+
+.weather-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 30px;
+    text-align: center;
+    width: 300px;
+    max-width: 90%;
+    position: relative;
+    z-index: 10;
+}
+
+.weather-details h2 {
+    margin-top: 0;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.weather-details .location {
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.weather-details p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.weather-details p strong {
+    color: #333;
+}
+
+/* Background colors for different weather icons */
+.bg-clear-day {
+    background: linear-gradient(135deg, #87CEEB, #FFA500);
+}
+
+.bg-clear-night {
+    background: linear-gradient(135deg, #191970, #4169E1);
+}
+
+.bg-cloudy {
+    background: linear-gradient(135deg, #A9A9A9, #D3D3D3);
+}
+
+.bg-partly-cloudy-day {
+    background: linear-gradient(135deg, #87CEEB, #D3D3D3);
+}
+
+.bg-partly-cloudy-night {
+    background: linear-gradient(135deg, #191970, #696969);
+}
+
+.bg-rain {
+    background: linear-gradient(135deg, #4682B4, #778899);
+}
+
+.bg-snow {
+    background: linear-gradient(135deg, #FFFFFF, #B0E0E6);
+}
+
+.bg-fog {
+    background: linear-gradient(135deg, #778899, #A9A9A9);
+}
+
+.bg-wind {
+    background: linear-gradient(135deg, #87CEEB, #B0C4DE);
 }
