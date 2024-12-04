@@ -5,7 +5,28 @@ body {
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
-    transition: background-color 0.5s ease;
+    position: relative;
+}
+
+.background-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+
+body.transitioning .background-transition {
+    opacity: 1;
+}
+
+.app-container {
+    position: relative;
+    z-index: 10;
 }
 
 .weather-card {
@@ -77,4 +98,85 @@ body {
 
 .bg-wind {
     background: linear-gradient(135deg, #87CEEB, #B0C4DE);
+}
+
+.five-day-forecast {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    overflow-x: auto; /* Allow horizontal scrolling on small screens */
+}
+
+.forecast-day {
+    flex: 1;
+    min-width: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.forecast-day h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.forecast-day p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Ensure the weather card can accommodate the row layout */
+.weather-card {
+    width: 600px; /* Increased width to accommodate row layout */
+    max-width: 95%;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    position:relative;
+    z-index: 10;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px; /* Match the weather card width */
+}
+
+#location-search {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    flex-grow: 1;
+}
+
+#search-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+    background-color: #45a049;
 }
